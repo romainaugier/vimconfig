@@ -24,5 +24,5 @@ curl -fLo ~/.vimrc https://raw.githubusercontent.com/romainaugier/vimconfig/main
 
 *Windows (cmd)*
 ```batch
-bitsadmin /transfer "Vimrc Download" "https://raw.githubusercontent.com/romainaugier/vimconfig/main/.vimrc" "%USERPROFILE%\.vimrc"
+bitsadmin /transfer "Vimrc Download" "https://raw.githubusercontent.com/romainaugier/vimconfig/main/.vimrc" "%USERPROFILE%\_vimrc"
 ```
