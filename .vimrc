@@ -5,11 +5,19 @@ set nocompatible
 set path+=**
 set wildmenu
 
+" netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 15
+
 " Turn on syntax highlighting
 syntax on
 
 " completion
 filetype plugin on
+filetype plugin indent on
 
 " Show line numbers
 set number
@@ -17,6 +25,7 @@ set numberwidth=4
 
 " tabs
 set tabstop=4
+set shiftwidth=4
 set softtabstop=4
 set expandtab
 
@@ -72,7 +81,7 @@ set ruler
 set showtabline=2	 
 
 set undolevels=1000	
-set backspace=indent,eol,start
+" set backspace=indent,eol,start
 
 call plug#begin()
 
