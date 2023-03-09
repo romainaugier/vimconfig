@@ -3,7 +3,6 @@ set nocompatible
 
 " search down into subfolders
 set path+=**
-
 set wildmenu
 
 " Turn on syntax highlighting
@@ -52,6 +51,28 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Leader key
+let mapleader = "," 
+
+" Completion
+set complete+=kspell
+set completeopt=menuone,longest
+set shortmess+=c
+
+" Save when we write changes
+set autowriteall
+
+" Delete/Close buffer, when no buffer left
+" it opens a new blank one
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+
+" Advanced
+set ruler	
+set showtabline=2	 
+
+set undolevels=1000	
+set backspace=indent,eol,start
 
 call plug#begin()
 
