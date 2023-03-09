@@ -23,6 +23,12 @@ set expandtab
 
 " smart indentation
 set smartindent
+set autoindent
+
+" set colorcolumn=80
+
+" autocomplete
+set omnifunc=syntaxcomplete#Complete
 
 " navigate buffer without losign unsaved work
 set hidden
@@ -38,17 +44,32 @@ set noswapfile
 set noshowmode
 set laststatus=2
 
+" splits
+set splitbelow
+set splitright
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 call plug#begin()
 
 Plug 'itchyny/lightline.vim'
 
 Plug 'catppuccin/vim'
 
+Plug 'ghifarit53/tokyonight-vim'
+
+Plug 'vim-scripts/AutoComplPop'
+
 call plug#end()
 
-set t_Co=256
-let g:lightline = { 'colorscheme' : 'catppuccin_frappe' }
+set termguicolors
 
-colorscheme catppuccin_frappe
+let g:tokyonight_style = 'night'
+let g:tokyonight_enable_italic = 1
+
+colorscheme tokyonight 
 
 set background=dark
