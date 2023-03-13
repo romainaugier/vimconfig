@@ -1,6 +1,6 @@
-# Simple vim configuration stored here so I can port it everywhere
+# Vim Configuration
 
-Vim configuration
+[Useful](https://quickref.me/vim)
 
 ## Installing vimplug
 
