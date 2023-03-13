@@ -1,6 +1,13 @@
 " Don't be vi compatible
 set nocompatible
 
+" utf8 encoding always
+set encoding=utf-8
+
+set signcolumn=yes
+
+set updatetime=300
+
 " search down into subfolders
 set path+=**
 set wildmenu
@@ -92,6 +99,10 @@ Plug 'catppuccin/vim'
 Plug 'ghifarit53/tokyonight-vim'
 
 Plug 'vim-scripts/AutoComplPop'
+
+Plug 'tpope/vim-commentary' " gcc to comment a line, gc to comment a bloc in visual mode
+
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
