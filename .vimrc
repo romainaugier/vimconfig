@@ -104,8 +104,6 @@ Plug 'tpope/vim-commentary' " gcc to comment a line, gc to comment a bloc in vis
 
 Plug 'sheerun/vim-polyglot'
 
-Plug 'dense-analysis/ale'
-
 call plug#end()
 
 set termguicolors
