@@ -85,13 +85,6 @@ set showtabline=2
 set undolevels=1000	
 " set backspace=indent,eol,start
 
-" ALE settings
-let g:ale_completion_enabled = 1
-set omnifunc=ale#completion#OmniFunc
-let g:ale_completion_autoimport = 0
-let g:ale_virtualtext_cursor = 'current'
-let g:ale_sign_column_always = 1
-
 " plugs
 call plug#begin()
 
@@ -107,9 +100,9 @@ Plug 'terryma/vim-multiple-cursors'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'dense-analysis/ale'
+Plug 'airblade/vim-gitgutter'
 
-Plug 'maximbaz/lightline-ale'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 call plug#end()
 
@@ -123,29 +116,27 @@ colorscheme tokyonight
 
 set background=dark
 
-let g:lightline = { 'colorscheme': 'tokyonight' }
+" coc with lightline
+let g:lightline = {
+            \ 'colorscheme': 'tokyonight',
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+            \ },
+            \ 'component_function': {
+            \   'cocstatus': 'coc#status'
+            \ },
+            \ }
 
-" ale configuration for lightline
-let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_infos': 'lightline#ale#infos',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
-      \ }
+" Use autocmd to force lightline update.
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
-let g:lightline.component_type = {
-      \     'linter_checking': 'right',
-      \     'linter_infos': 'right',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'right',
-      \ }
+" coc settings
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
-let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]] }
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-let g:lightline.active = {
-            \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
-            \            [ 'lineinfo' ],
-    	    \            [ 'percent' ],
-	        \            [ 'fileformat', 'fileencoding', 'filetype'] ] }
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
