@@ -1,6 +1,7 @@
 # Vim Configuration
 
-[Useful](https://quickref.me/vim)
+[Vim Cheat Sheet](https://quickref.me/vim)
+[Vim Multiple Cursors](https://vimawesome.com/plugin/vim-multiple-cursors)
 
 ## Installing vimplug
 
