@@ -40,11 +40,6 @@ set expandtab
 set smartindent
 set autoindent
 
-" set colorcolumn=80
-
-" autocomplete
-set omnifunc=syntaxcomplete#Complete
-
 " navigate buffer without losign unsaved work
 set hidden
 
@@ -90,15 +85,19 @@ set showtabline=2
 set undolevels=1000	
 " set backspace=indent,eol,start
 
+" ALE settings
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_autoimport = 0
+let g:ale_virtualtext_cursor = 'current'
+let g:ale_sign_column_always = 1
+
+" plugs
 call plug#begin()
 
 Plug 'itchyny/lightline.vim'
 
-Plug 'catppuccin/vim'
-
 Plug 'ghifarit53/tokyonight-vim'
-
-Plug 'vim-scripts/AutoComplPop'
 
 Plug 'tpope/vim-commentary' " gcc to comment a line, gc to comment a bloc in visual mode
 
@@ -106,16 +105,47 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'terryma/vim-multiple-cursors'
 
-Plug 'w0rp/ale'
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'dense-analysis/ale'
+
+Plug 'maximbaz/lightline-ale'
 
 call plug#end()
 
+" color scheme
 set termguicolors
 
 let g:tokyonight_style = 'night'
 let g:tokyonight_enable_italic = 1
-let g:lightline = { 'colorscheme': 'tokyonight' }
 
 colorscheme tokyonight 
 
 set background=dark
+
+let g:lightline = { 'colorscheme': 'tokyonight' }
+
+" ale configuration for lightline
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_infos': 'lightline#ale#infos',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'right',
+      \     'linter_infos': 'right',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'right',
+      \ }
+
+let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]] }
+
+let g:lightline.active = {
+            \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
+            \            [ 'lineinfo' ],
+    	    \            [ 'percent' ],
+	        \            [ 'fileformat', 'fileencoding', 'filetype'] ] }
