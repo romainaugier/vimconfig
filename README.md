@@ -1,7 +1,13 @@
 # Vim Configuration
 
 [Vim Cheat Sheet](https://quickref.me/vim)
+
 [Vim Multiple Cursors](https://vimawesome.com/plugin/vim-multiple-cursors)
+
+#### Coc setup :
+- (C/C++) `:CocInstall coc-clangd`
+- (Python) `:CocInstall coc-pyright`
+- (Lua) `:CocInstall coc-lua`
 
 ## Installing vimplug
 
