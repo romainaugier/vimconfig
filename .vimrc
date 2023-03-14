@@ -106,7 +106,7 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'terryma/vim-multiple-cursors'
 
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 
 call plug#end()
 
