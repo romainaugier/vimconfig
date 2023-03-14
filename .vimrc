@@ -104,6 +104,8 @@ Plug 'tpope/vim-commentary' " gcc to comment a line, gc to comment a bloc in vis
 
 Plug 'sheerun/vim-polyglot'
 
+Plug 'terryma/vim-multiple-cursors'
+
 call plug#end()
 
 set termguicolors
