@@ -4,11 +4,6 @@
 
 [Vim Multiple Cursors](https://vimawesome.com/plugin/vim-multiple-cursors)
 
-#### Coc setup :
-- (C/C++) `:CocInstall coc-clangd`
-- (Python) `:CocInstall coc-pyright`
-- (Lua) `:CocInstall coc-lua`
-
 ## Installing vimplug
 
 *Linux*
@@ -43,3 +38,11 @@ iwr -useb https://raw.githubusercontent.com/romainaugier/vimconfig/main/.vimrc |
 ```batch
 bitsadmin /transfer "Vimrc Download" "https://raw.githubusercontent.com/romainaugier/vimconfig/main/.vimrc" "%USERPROFILE%\_vimrc"
 ```
+
+## Coc
+
+Installs :
+- (C/C++) `:CocInstall coc-clangd`
+- (Python) `:CocInstall coc-pyright`
+- (Lua) `:CocInstall coc-lua`
+
