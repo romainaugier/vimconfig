@@ -50,9 +50,11 @@ set smartcase
 " No swap file 
 set noswapfile
 
-" hide show
-set noshowmode
+" always show statusline
 set laststatus=2
+
+" backspace always working
+set backspace=indent,eol,start
 
 " splits
 set splitbelow
@@ -78,12 +80,7 @@ set autowriteall
 " it opens a new blank one
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
-" Advanced
-set ruler	
-set showtabline=2	 
-
 set undolevels=1000	
-" set backspace=indent,eol,start
 
 " plugs
 call plug#begin()
@@ -94,8 +91,6 @@ Plug 'ghifarit53/tokyonight-vim'
 
 Plug 'tpope/vim-commentary' " gcc to comment a line, gc to comment a bloc in visual mode
 
-Plug 'sheerun/vim-polyglot'
-
 Plug 'terryma/vim-multiple-cursors'
 
 Plug 'jiangmiao/auto-pairs'
@@ -104,7 +99,14 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
+Plug 'vim-python/python-syntax'
+
+Plug 'bfrg/vim-cpp-modern'
+
 call plug#end()
+
+" syntax highlighting
+let g:python_highlight_all = 1
 
 " color scheme
 set termguicolors
@@ -178,6 +180,13 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gsd :vsp<CR><Plug>(coc-definition)
+
 nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gsy :vsp<CR><Plug>(coc-type-definition)
+
 nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gsi :vsp<CR><Plug>(coc-implementation)
+
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gsr :vsp<CR><Plug>(coc-references)
