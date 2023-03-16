@@ -105,7 +105,7 @@ Plug 'bfrg/vim-cpp-modern'
 
 Plug 'valloric/python-indent'
 
-Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+Plug 'kkoomen/vim-doge', { 'tag' : 'v3.10.0', 'do': { -> doge#install() } }
 
 call plug#end()
 
