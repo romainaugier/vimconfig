@@ -38,10 +38,9 @@ iwr -useb https://raw.githubusercontent.com/romainaugier/vimconfig/main/.vimrc |
 bitsadmin /transfer "Vimrc Download" "https://raw.githubusercontent.com/romainaugier/vimconfig/main/.vimrc" "%USERPROFILE%\_vimrc"
 ```
 
-## Coc
+## LSP
 
 Installs :
-- (C/C++) `:CocInstall coc-clangd`
-- (Python) `:CocInstall coc-pyright`
-- (Lua) `:CocInstall coc-lua`
-
+- (C/C++) [Clang](https://releases.llvm.org/download.html) must be in the PATH
+- (Python) `pip install python-lsp-server` and pylsp must be in the PATH
+- (Lua) [lua-language-server](https://github.com/LuaLS/lua-language-server) must be in the PATH
