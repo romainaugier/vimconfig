@@ -86,39 +86,21 @@ set undolevels=1000
 call plug#begin()
 
 Plug 'itchyny/lightline.vim'
-
 Plug 'ghifarit53/tokyonight-vim'
-
 Plug 'tpope/vim-commentary' " gcc to comment a line, gc to comment a bloc in visual mode
-
 Plug 'terryma/vim-multiple-cursors'
-
 Plug 'jiangmiao/auto-pairs'
-
 Plug 'airblade/vim-gitgutter'
-
 Plug 'prabirshrestha/vim-lsp'
-
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
 Plug 'prabirshrestha/asyncomplete.vim'
-
 Plug 'keremc/asyncomplete-clang.vim'
-
 Plug 'prabirshrestha/asyncomplete-file.vim'
-
-Plug 'vim-python/python-syntax'
-
-Plug 'bfrg/vim-cpp-modern'
-
+Plug 'sheerun/vim-polyglot'
 Plug 'valloric/python-indent'
-
 Plug 'kkoomen/vim-doge', { 'tag' : 'v3.10.0', 'do': { -> doge#install() } }
 
 call plug#end()
-
-" syntax highlighting
-let g:python_highlight_all = 1
 
 " color scheme
 set termguicolors
