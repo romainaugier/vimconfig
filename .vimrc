@@ -105,6 +105,8 @@ Plug 'prabirshrestha/asyncomplete.vim'
 
 Plug 'keremc/asyncomplete-clang.vim'
 
+Plug 'prabirshrestha/asyncomplete-file.vim'
+
 Plug 'vim-python/python-syntax'
 
 Plug 'bfrg/vim-cpp-modern'
@@ -142,9 +144,29 @@ if executable('pylsp')
                 \ })
 endif
 
-" C/C++
-autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#clang#get_source_options())
+" Lua
+if executable('lua-language-server')
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'lua-language-server',
+                \ 'cmd': {server_info->['lua-language-server']},
+                \ 'allowlist': ['lua'],
+                \ })
+endif
 
+" C/C++
+if executable('clang')
+    autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#clang#get_source_options())
+endif
+
+" Filename
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'allowlist': ['*'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#file#completor')
+    \ }))
+
+" key mappings
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
