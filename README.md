@@ -42,5 +42,5 @@ bitsadmin /transfer "Vimrc Download" "https://raw.githubusercontent.com/romainau
 
 Installs :
 - (C/C++) [Clang](https://releases.llvm.org/download.html) must be in the PATH
-- (Python) `pip install python-lsp-server` and pylsp must be in the PATH
+- (Python) `pip install python-lsp-server[all]` and pylsp must be in the PATH
 - (Lua) [lua-language-server](https://github.com/LuaLS/lua-language-server) must be in the PATH
