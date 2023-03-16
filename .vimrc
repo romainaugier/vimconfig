@@ -103,6 +103,10 @@ Plug 'vim-python/python-syntax'
 
 Plug 'bfrg/vim-cpp-modern'
 
+Plug 'valloric/python-indent'
+
+Plug 'pixelneo/vim-python-docstring'
+
 call plug#end()
 
 " syntax highlighting
@@ -190,3 +194,6 @@ nmap <silent> gsi :vsp<CR><Plug>(coc-implementation)
 
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gsr :vsp<CR><Plug>(coc-references)
+
+" docstring settings
+let g:python_style = 'google'
