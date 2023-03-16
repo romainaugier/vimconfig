@@ -1,6 +1,9 @@
 " Don't be vi compatible
 set nocompatible
 
+" Leader key
+let mapleader = "," 
+
 " utf8 encoding always
 set encoding=utf-8
 
@@ -65,9 +68,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Leader key
-let mapleader = "," 
-
 " Completion
 set complete+=kspell
 set completeopt=menuone,longest
@@ -105,7 +105,7 @@ Plug 'bfrg/vim-cpp-modern'
 
 Plug 'valloric/python-indent'
 
-Plug 'pixelneo/vim-python-docstring'
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
 call plug#end()
 
@@ -195,5 +195,5 @@ nmap <silent> gsi :vsp<CR><Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gsr :vsp<CR><Plug>(coc-references)
 
-" docstring settings
-let g:python_style = 'google'
+" doge settings
+let g:doge_doc_standard_python = 'google'
