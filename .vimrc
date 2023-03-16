@@ -97,7 +97,13 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'airblade/vim-gitgutter'
 
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'prabirshrestha/vim-lsp'
+
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+Plug 'prabirshrestha/asyncomplete.vim'
+
+Plug 'keremc/asyncomplete-clang.vim'
 
 Plug 'vim-python/python-syntax'
 
@@ -122,78 +128,55 @@ colorscheme tokyonight
 
 set background=dark
 
-function! s:lightline_coc_diagnostic(kind, sign) abort
-  let info = get(b:, 'coc_diagnostic_info', 0)
-  if empty(info) || get(info, a:kind, 0) == 0
-    return ''
-  endif
-  try
-    let s = g:coc_user_config['diagnostic'][a:sign . 'Sign']
-  catch
-    let s = ''
-  endtry
-  return printf('%s %d', s, info[a:kind])
+" add theme to lightline status bar
+let g:lightline = { 'colorscheme': 'tokyonight' }
+
+" vim-lsp settings
+
+" Python
+if executable('pylsp')
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'pylsp',
+                \ 'cmd': {server_info->['pylsp']},
+                \ 'allowlist': ['python'],
+                \ })
+endif
+
+" C/C++
+autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#clang#get_source_options())
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+
+    nmap <buffer> gd <Plug>(lsp-definition)
+    nmap <buffer> gsd :vsp<CR><Plug>(lsp-definition)
+
+    nmap <buffer> gs <Plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <Plug>(lsp-workspace-symbol-search)
+
+    nmap <buffer> gr <Plug>(lsp-references)
+
+    nmap <buffer> gy <Plug>(lsp-type-definition)
+    nmap <buffer> gsy :vsp<CR><Plug>(lsp-type-definition)
+
+    nmap <buffer> gi <Plug>(lsp-implementation)
+    nmap <buffer> gsi :vsp<CR><Plug>(lsp-implementation)
+
+    nmap <buffer> gr <Plug>(lsp-references)
+    nmap <buffer> gsr :vsp<CR><Plug>(lsp-references)
+
+    nmap <buffer> <leader>rn <Plug>(lsp-rename)
+
+    let g:lsp_format_sync_timeout = 1000
 endfunction
 
-function! LightlineCocErrors() abort
-  return s:lightline_coc_diagnostic('error', 'error')
-endfunction
-
-function! LightlineCocWarnings() abort
-  return s:lightline_coc_diagnostic('warning', 'warning')
-endfunction
-
-function! LightlineCocInfos() abort
-  return s:lightline_coc_diagnostic('information', 'info')
-endfunction
-
-function! LightlineCocHints() abort
-  return s:lightline_coc_diagnostic('hints', 'hint')
-endfunction
-\ }
-
-let g:lightline = {
-            \ 'colorscheme': 'tokyonight',
-            \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'readonly', 'filename', 'modified', 'coc_error', 'coc_warning', 'coc_hint', 'coc_info' ] ],
-            \   'right': [ [ 'lineinfo',  ],
-            \              [ 'percent' ],
-            \              [ 'fileformat', 'fileencoding', 'filetype'] ]
-            \ },
-            \ 'component_expand': {
-            \   'coc_error'        : 'LightlineCocErrors',
-            \   'coc_warning'      : 'LightlineCocWarnings',
-            \   'coc_info'         : 'LightlineCocInfos',
-            \   'coc_hint'         : 'LightlineCocHints'
-            \ }
-            \ }
-
-let g:lightline.component_type = {
-            \   'coc_error'        : 'error',
-            \   'coc_warning'      : 'warning',
-            \   'coc_info'         : 'tabsel',
-            \   'coc_hint'         : 'middle'
-            \ }
-
-autocmd User CocDiagnosticChange call lightline#update()
-
-" coc settings
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gsd :vsp<CR><Plug>(coc-definition)
-
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gsy :vsp<CR><Plug>(coc-type-definition)
-
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gsi :vsp<CR><Plug>(coc-implementation)
-
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gsr :vsp<CR><Plug>(coc-references)
+augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 " doge settings
 let g:doge_doc_standard_python = 'google'
