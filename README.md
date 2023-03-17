@@ -47,3 +47,4 @@ Servers :
 - (Python) `pip install pylint` and pylint must be in the PATH and run `:CocInstall coc-python`
 - (Lua) run `:CocInstall coc-lua`
 - (VimScript) run `:CocInstall coc-vimlsp`
+- (CMake) run `:CocInstall coc-cmake`
