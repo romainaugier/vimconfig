@@ -38,9 +38,12 @@ iwr -useb https://raw.githubusercontent.com/romainaugier/vimconfig/main/.vimrc |
 bitsadmin /transfer "Vimrc Download" "https://raw.githubusercontent.com/romainaugier/vimconfig/main/.vimrc" "%USERPROFILE%\_vimrc"
 ```
 
-## LSP
+## Coc
+NodeJS :
+- Download and install [NodeJS](https://nodejs.org/en) and put it in the PATH
 
-Installs :
-- (C/C++) [Clang](https://releases.llvm.org/download.html) must be in the PATH
-- (Python) `pip install python-lsp-server[all]` and pylsp must be in the PATH
-- (Lua) [lua-language-server](https://github.com/LuaLS/lua-language-server) must be in the PATH
+Servers :
+- (C/C++) [Clang](https://releases.llvm.org/download.html) must be in the PATH and run `:CocInstall coc-clangd`
+- (Python) `pip install pylint` and pylint must be in the PATH and run `:CocInstall coc-python`
+- (Lua) run `:CocInstall coc-lua`
+- (VimScript) run `:CocInstall coc-vimlsp`
