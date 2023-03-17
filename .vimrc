@@ -9,6 +9,9 @@ set encoding=utf-8
 
 set signcolumn=yes
 
+" limit at 80 chars
+set colorcolumn=80
+
 set updatetime=300
 
 " search down into subfolders
@@ -181,6 +184,10 @@ augroup lsp_install
     au!
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+let g:lsp_diagnostics_virtual_text_enabled = 0
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_float_cursor = 1
 
 " doge settings
 let g:doge_doc_standard_python = 'google'
