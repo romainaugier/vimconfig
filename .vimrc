@@ -83,12 +83,17 @@ set autowriteall
 " it opens a new blank one
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
+" undos
 set undolevels=1000	
+
+" highlight current line 
+set cursorline
 
 " plugs
 call plug#begin()
 
 Plug 'itchyny/lightline.vim'
+Plug 'josa42/vim-lightline-coc'
 Plug 'tpope/vim-commentary' " gcc to comment a line, gc to comment a bloc in visual mode
 Plug 'tomasiser/vim-code-dark'
 Plug 'terryma/vim-multiple-cursors'
@@ -108,17 +113,17 @@ set t_Co=256
 set t_ut=
 colorscheme codedark
 
-let g:lightline = { 
+let g:lightline = {
             \ 'colorscheme': 'codedark',
             \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-            \ },
-            \ 'component_function': {
-            \   'cocstatus': 'coc#status'
-            \ },
+            \    'left': [ [ 'mode', 'paste' ],
+            \              [ 'filename', 'modified' ],
+            \              [ 'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ],
+            \              [ 'coc-status' ]]
+            \ }
             \ }
 
+call lightline#coc#register()
 
 " syntax highlighting
 let g:python_highlight_all = 1
