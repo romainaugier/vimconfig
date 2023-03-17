@@ -85,15 +85,12 @@ map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 set undolevels=1000	
 
-let g:tokyonight_style = 'night'
-let g:tokyonight_enable_italic = 1
-
 " plugs
 call plug#begin()
 
 Plug 'itchyny/lightline.vim'
-Plug 'romainaugier/tokyonight-vim'
 Plug 'tpope/vim-commentary' " gcc to comment a line, gc to comment a bloc in visual mode
+Plug 'tomasiser/vim-code-dark'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
@@ -109,12 +106,14 @@ Plug 'kkoomen/vim-doge', { 'tag' : 'v3.10.0', 'do': { -> doge#install() } }
 call plug#end()
 
 " color scheme
-set termguicolors
-colorscheme tokyonight 
-set background=dark
+let g:lightline = { 'colorscheme': 'codedark' }
+let g:codedark_italics=1
 
-" add theme to lightline status bar
-let g:lightline = { 'colorscheme': 'tokyonight' }
+set t_Co=256
+set t_ut=
+colorscheme codedark
+
+let g:lightline = { 'colorscheme': 'codedark' }
 
 " syntax highlighting
 let g:python_highlight_all = 1
