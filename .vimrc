@@ -93,12 +93,8 @@ Plug 'tpope/vim-commentary' " gcc to comment a line, gc to comment a bloc in vis
 Plug 'tomasiser/vim-code-dark'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'airblade/vim-gitgutter'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'keremc/asyncomplete-clang.vim'
-Plug 'prabirshrestha/asyncomplete-file.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'valloric/python-indent'
 Plug 'kkoomen/vim-doge', { 'tag' : 'v3.10.0', 'do': { -> doge#install() } }
@@ -106,88 +102,58 @@ Plug 'kkoomen/vim-doge', { 'tag' : 'v3.10.0', 'do': { -> doge#install() } }
 call plug#end()
 
 " color scheme
-let g:lightline = { 'colorscheme': 'codedark' }
 let g:codedark_italics=1
 
 set t_Co=256
 set t_ut=
 colorscheme codedark
 
-let g:lightline = { 'colorscheme': 'codedark' }
+let g:lightline = { 
+            \ 'colorscheme': 'codedark',
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+            \ },
+            \ 'component_function': {
+            \   'cocstatus': 'coc#status'
+            \ },
+            \ }
+
 
 " syntax highlighting
 let g:python_highlight_all = 1
 
-" vim-lsp settings
+" coc settings
+nmap <leader>f <Plug>(coc-format-selected)
 
-" Python
-if executable('pylsp')
-    au User lsp_setup call lsp#register_server({
-                \ 'name': 'pylsp',
-                \ 'cmd': {server_info->['pylsp']},
-                \ 'allowlist': ['python'],
-                \ })
-endif
+nmap <buffer> gd <Plug>(coc-definition)
+nmap <buffer> gsd :vsp<CR><Plug>(coc-definition)
 
-" Lua
-if executable('lua-language-server')
-    au User lsp_setup call lsp#register_server({
-                \ 'name': 'lua-language-server',
-                \ 'cmd': {server_info->['lua-language-server']},
-                \ 'allowlist': ['lua'],
-                \ })
-endif
+nmap <buffer> gr <Plug>(coc-references)
 
-" C/C++
-if executable('clang')
-    autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#clang#get_source_options())
-endif
+nmap <buffer> gy <Plug>(coc-type-definition)
+nmap <buffer> gsy :vsp<CR><Plug>(coc-type-definition)
 
-" Filename
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
-    \ 'name': 'file',
-    \ 'allowlist': ['*'],
-    \ 'priority': 10,
-    \ 'completor': function('asyncomplete#sources#file#completor')
-    \ }))
+nmap <buffer> gi <Plug>(coc-implementation)
+nmap <buffer> gsi :vsp<CR><Plug>(coc-implementation)
 
-" key mappings
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
+nmap <buffer> gr <Plug>(coc-references)
+nmap <buffer> gsr :vsp<CR><Plug>(coc-references)
 
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+nmap <buffer> <leader>rn <Plug>(coc-rename)
 
-    nmap <buffer> gd <Plug>(lsp-definition)
-    nmap <buffer> gsd :vsp<CR><Plug>(lsp-definition)
-
-    nmap <buffer> gs <Plug>(lsp-document-symbol-search)
-    nmap <buffer> gS <Plug>(lsp-workspace-symbol-search)
-
-    nmap <buffer> gr <Plug>(lsp-references)
-
-    nmap <buffer> gy <Plug>(lsp-type-definition)
-    nmap <buffer> gsy :vsp<CR><Plug>(lsp-type-definition)
-
-    nmap <buffer> gi <Plug>(lsp-implementation)
-    nmap <buffer> gsi :vsp<CR><Plug>(lsp-implementation)
-
-    nmap <buffer> gr <Plug>(lsp-references)
-    nmap <buffer> gsr :vsp<CR><Plug>(lsp-references)
-
-    nmap <buffer> <leader>rn <Plug>(lsp-rename)
-
-    let g:lsp_format_sync_timeout = 1000
-endfunction
-
-augroup lsp_install
-    au!
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+" coc status for lightline
+augroup lightline#coc
+  autocmd!
+  autocmd User CocDiagnosticChange call lightline#update()
+  autocmd User CocStatusChange call lightline#update()
 augroup END
 
-let g:lsp_diagnostics_virtual_text_enabled = 0
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_diagnostics_float_cursor = 1
+" coc enter to complete
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+" coc highlight words
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " doge settings
 let g:doge_doc_standard_python = 'google'
