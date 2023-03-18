@@ -44,7 +44,7 @@ NodeJS :
 
 Servers :
 - (C/C++) [Clang](https://releases.llvm.org/download.html) must be in the PATH and run `:CocInstall coc-clangd`
-- (Python) `pip install pylint` and pylint must be in the PATH and run `:CocInstall coc-python`
+- (Python) `pip install pylint` and pylint must be in the PATH and run `:CocInstall coc-pyright`
 - (Lua) run `:CocInstall coc-lua`
 - (VimScript) run `:CocInstall coc-vimlsp`
 - (CMake) run `:CocInstall coc-cmake`
