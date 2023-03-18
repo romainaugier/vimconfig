@@ -48,3 +48,4 @@ Servers :
 - (Lua) run `:CocInstall coc-lua`
 - (VimScript) run `:CocInstall coc-vimlsp`
 - (CMake) run `:CocInstall coc-cmake`
+- (Bash) run `:CocInstall coc-sh` 
