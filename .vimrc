@@ -102,6 +102,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 Plug 'valloric/python-indent'
+Plug 'tpope/vim-abolish'
 Plug 'kkoomen/vim-doge', { 'tag' : 'v3.10.0', 'do': { -> doge#install() } }
 
 call plug#end()
