@@ -25,6 +25,9 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 15
 
+" Freed <C-l> in Netrw
+nmap <leader><leader><leader><leader><leader><leader>l <Plug>NetrwRefresh
+
 " Turn on syntax highlighting
 syntax on
 
