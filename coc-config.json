@@ -1,0 +1,9 @@
+{
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": true,
+    "pyright.inlayHints.functionReturnTypes": false,
+    "pyright.inlayHints.variableTypes": false,
+    "python.linting.pylintEnabled": true,
+    "semanticTokens.enable": true
+}
