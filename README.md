@@ -49,3 +49,4 @@ Servers :
 - (VimScript) run `:CocInstall coc-vimlsp`
 - (CMake) run `:CocInstall coc-cmake`
 - (Bash) run `:CocInstall coc-sh` 
+- (Markdown) run `:CocInstall coc-markdownlint`
