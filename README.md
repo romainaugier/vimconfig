@@ -50,3 +50,4 @@ Servers :
 - (CMake) run `:CocInstall coc-cmake`
 - (Bash) run `:CocInstall coc-sh` 
 - (Markdown) run `:CocInstall coc-markdownlint`
+- (Json) run `:CocInstall coc-json`
