@@ -107,6 +107,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'valloric/python-indent'
 Plug 'tpope/vim-abolish'
 Plug 'kkoomen/vim-doge', { 'tag' : 'v3.10.0', 'do': { -> doge#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -135,21 +137,21 @@ let g:python_highlight_all = 1
 " coc settings
 nmap <leader>f <Plug>(coc-format-selected)
 
-nmap <buffer> gd <Plug>(coc-definition)
-nmap <buffer> gsd :vsp<CR><Plug>(coc-definition)
+nmap gd <Plug>(coc-definition)
+nmap gsd :vsp<CR><Plug>(coc-definition)
 
-nmap <buffer> gr <Plug>(coc-references)
+nmap gr <Plug>(coc-references)
 
-nmap <buffer> gy <Plug>(coc-type-definition)
-nmap <buffer> gsy :vsp<CR><Plug>(coc-type-definition)
+nmap gy <Plug>(coc-type-definition)
+nmap gsy :vsp<CR><Plug>(coc-type-definition)
 
-nmap <buffer> gi <Plug>(coc-implementation)
-nmap <buffer> gsi :vsp<CR><Plug>(coc-implementation)
+nmap gi <Plug>(coc-implementation)
+nmap gsi :vsp<CR><Plug>(coc-implementation)
 
-nmap <buffer> gr <Plug>(coc-references)
-nmap <buffer> gsr :vsp<CR><Plug>(coc-references)
+nmap gr <Plug>(coc-references)
+nmap gsr :vsp<CR><Plug>(coc-references)
 
-nmap <buffer> <leader>rn <Plug>(coc-rename)
+nmap <leader>rn <Plug>(coc-rename)
 
 " coc status for lightline
 augroup lightline#coc
