@@ -64,7 +64,7 @@ Case style refactoring :
 - UPPER_CASE (cru)
 - dash-case (cr-)
 - dot.case (cr.)
-- space case (cr<space>)
+- space case (cr\<space\>)
 - Title Case (crt)
 
 #### Coc
