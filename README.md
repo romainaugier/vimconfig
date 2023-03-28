@@ -51,3 +51,22 @@ Servers :
 - (Bash) run `:CocInstall coc-sh` 
 - (Markdown) run `:CocInstall coc-markdownlint`
 - (Json) run `:CocInstall coc-json`
+
+## Shortcuts (to remember because it's hard to keep all them in my head)
+
+### Refactoring
+#### Vim Abolish
+Case style refactoring : 
+- snake_case (crs) 
+- MixedCase (crm)
+- camelCase (crc)
+- snake_case (crs)
+- UPPER_CASE (cru)
+- dash-case (cr-)
+- dot.case (cr.)
+- space case (cr<space>)
+- Title Case (crt)
+
+#### Coc
+Workspace refactoring :
+- rename (,rn)
