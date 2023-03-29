@@ -70,3 +70,9 @@ Case style refactoring :
 #### Coc
 Workspace refactoring :
 - rename (,rn)
+
+#### FZF
+- :Files to open the file searching window
+- Ctrl + V to open the file in new vertical split
+- Ctrl + T to open the file in new tab
+- Ctrl + S to open the file in new split
