@@ -52,7 +52,7 @@ Servers :
 - (Markdown) run `:CocInstall coc-markdownlint`
 - (Json) run `:CocInstall coc-json`
 
-## Shortcuts (to remember because it's hard to keep all them in my head)
+## Shortcuts (because it's hard to remember all of them)
 
 ### Refactoring
 #### Vim Abolish
@@ -71,6 +71,7 @@ Case style refactoring :
 Workspace refactoring :
 - rename (,rn)
 
+### File seaching
 #### FZF
 - :Files to open the file searching window
 - Ctrl + V to open the file in new vertical split
