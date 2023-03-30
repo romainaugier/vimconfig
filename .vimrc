@@ -14,6 +14,9 @@ set colorcolumn=80
 
 set updatetime=300
 
+" always show one line above/below the cursor
+set scrolloff=1
+
 " search down into subfolders
 set path+=**
 set wildmenu
