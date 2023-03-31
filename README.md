@@ -77,3 +77,7 @@ Workspace refactoring :
 - Ctrl + V to open the file in new vertical split
 - Ctrl + T to open the file in new tab
 - Ctrl + S to open the file in new split
+
+### Documentation
+#### Vim Doge
+- <Leader>d and cursor on a function to generate documentation
