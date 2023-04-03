@@ -54,6 +54,9 @@ Servers :
 
 ## Shortcuts (because it's hard to remember all of them)
 
+### General
+- even splits = <C-W>= 
+
 ### Refactoring
 #### Vim Abolish
 Case style refactoring : 
