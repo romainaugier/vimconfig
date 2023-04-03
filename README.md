@@ -55,32 +55,32 @@ Servers :
 ## Shortcuts (because it's hard to remember all of them)
 
 ### General
-- even splits = <C-W>= 
+- even splits `<C-W>=`
 
 ### Refactoring
 #### Vim Abolish
 Case style refactoring : 
-- snake_case (crs) 
-- MixedCase (crm)
-- camelCase (crc)
-- snake_case (crs)
-- UPPER_CASE (cru)
-- dash-case (cr-)
-- dot.case (cr.)
-- space case (cr\<space\>)
-- Title Case (crt)
+- snake_case `crs`
+- MixedCase `crm`
+- camelCase `crc`
+- snake_case `crs`
+- UPPER_CASE `cru`
+- dash-case `cr-`
+- dot.case `cr.`
+- space case `cr<space>`
+- Title Case `crt`
 
 #### Coc
 Workspace refactoring :
-- rename (,rn)
+- rename `,rn`
 
 ### File seaching
 #### FZF
-- :Files to open the file searching window
-- Ctrl + V to open the file in new vertical split
-- Ctrl + T to open the file in new tab
-- Ctrl + S to open the file in new split
+- Open file search in a new window `:Files`
+- Open the file in new vertical split `<C-V>`
+- Open the file in new tab `<C-T>`
+- Open the file in new split `<C-X>`
 
 ### Documentation
 #### Vim Doge
-- <Leader>d and cursor on a function to generate documentation
+- Cursor on a function to generate documentation `,d`
