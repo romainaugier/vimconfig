@@ -52,35 +52,19 @@ Servers :
 - (Markdown) run `:CocInstall coc-markdownlint`
 - (Json) run `:CocInstall coc-json`
 
-## Shortcuts (because it's hard to remember all of them)
+### Shortcuts
 
-### General
-- even splits `<C-W>=`
-
-### Refactoring
-#### Vim Abolish
-Case style refactoring : 
-- snake_case `crs`
-- MixedCase `crm`
-- camelCase `crc`
-- snake_case `crs`
-- UPPER_CASE `cru`
-- dash-case `cr-`
-- dot.case `cr.`
-- space case `cr<space>`
-- Title Case `crt`
-
-#### Coc
-Workspace refactoring :
-- rename `,rn`
-
-### File seaching
-#### FZF
-- Open file search in a new window `:Files`
-- Open the file in new vertical split `<C-V>`
-- Open the file in new tab `<C-T>`
-- Open the file in new split `<C-X>`
-
-### Documentation
-#### Vim Doge
-- Cursor on a function to generate documentation `,d`
+| Action | Shortcut |
+| ------ | ---------|
+| Convert to snake_case | crs |
+| Convert to MixedCase  | crm | 
+| Convert to camelCase  | crc |
+| Convert to UPPER_CASE | cru |
+| Convert to dash-case  | cr- |
+| Convert to dot.case   | cr. |
+| Convert to space case | cr<space> |
+| Convert to Title Case | crt |
+| Rename symbol         | ,rn |
+| Go to symbol          | gd  |
+| Go to symbol in vsplit | gsd |
+| Cursor on symbol to generate documentation | ,d |
