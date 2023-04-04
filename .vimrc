@@ -171,3 +171,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " doge settings
 let g:doge_doc_standard_python = 'google'
+
+" fzf settings
+let g:fzf_preview_window = []
