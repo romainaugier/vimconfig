@@ -77,6 +77,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Moving lines
+nnoremap <leader>k :m +1<CR>
+nnoremap <leader>j :m -2<CR>
+
 " Completion
 set complete+=kspell
 set completeopt=menuone,longest
