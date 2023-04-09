@@ -12,6 +12,9 @@ set signcolumn=yes
 " limit at 80 chars
 set colorcolumn=80
 
+" relative line number
+set relativenumber
+
 set updatetime=300
 
 " always show one line above/below the cursor
