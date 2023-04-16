@@ -68,3 +68,4 @@ Servers :
 | Go to symbol          | gd  |
 | Go to symbol in vsplit | gsd |
 | Cursor on symbol to generate documentation | ,d |
+| Open File Search      | <C-F> |
