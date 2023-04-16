@@ -56,16 +56,16 @@ Servers :
 
 | Action | Shortcut |
 | ------ | ---------|
-| Convert to snake_case | crs |
-| Convert to MixedCase  | crm | 
-| Convert to camelCase  | crc |
-| Convert to UPPER_CASE | cru |
-| Convert to dash-case  | cr- |
-| Convert to dot.case   | cr. |
-| Convert to space case | cr<space> |
-| Convert to Title Case | crt |
-| Rename symbol         | ,rn |
-| Go to symbol          | gd  |
-| Go to symbol in vsplit | gsd |
-| Cursor on symbol to generate documentation | ,d |
-| Open File Search      | <C-F> |
+| Convert to snake_case | `crs` |
+| Convert to MixedCase  | `crm` | 
+| Convert to camelCase  | `crc` |
+| Convert to UPPER_CASE | `cru` |
+| Convert to dash-case  | `cr-` |
+| Convert to dot.case   | `cr.` |
+| Convert to space case | `cr<space>` |
+| Convert to Title Case | `crt` |
+| Rename symbol         | `,rn` |
+| Go to symbol          | `gd`  |
+| Go to symbol in vsplit | `gsd` |
+| Cursor on symbol to generate documentation | `,d` |
+| Open File Search      | `<C-F>` |
