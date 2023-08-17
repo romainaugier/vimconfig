@@ -84,6 +84,9 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>k :m +1<CR>
 nnoremap <leader>j :m -2<CR>
 
+" Remapping jj to esc
+inoremap jj <Esc>
+
 " Completion
 set complete+=kspell
 set completeopt=menuone,longest
