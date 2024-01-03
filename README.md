@@ -18,8 +18,7 @@ iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | 
 
 *Windows (cmd)*
 ```
-mkdir %USERPROFILE%\vimfiles\autoload
-bitsadmin /transfer "VimPlug Download" "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" "%USERPROFILE%\vimfiles\autoload\plug.vim"
+mkdir %USERPROFILE%\vimfiles\autoload && bitsadmin /transfer "VimPlug Download" "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" "%USERPROFILE%\vimfiles\autoload\plug.vim"
 ```
 
 ## Installing .vimrc file
