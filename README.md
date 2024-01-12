@@ -69,3 +69,10 @@ Servers :
 | Go to symbol in vsplit | `gsd` |
 | Cursor on symbol to generate documentation | `,d` |
 | Open File Search      | `<C-F>` |
+| Comment line          | `gc` | 
+| Comment visual block  | `gcc` | 
+| Quit insert mode      | `jj` |
+| Go to left vsplit     | `<C-H>` |
+| Go to right vsplit    | `<C-L>` |
+| Go to bottom vsplit   | `<C-J>` |
+| Go to top vsplit      | `<C-K>` |
