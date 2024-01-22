@@ -76,3 +76,5 @@ Servers :
 | Go to right vsplit    | `<C-L>` |
 | Go to bottom vsplit   | `<C-J>` |
 | Go to top vsplit      | `<C-K>` |
+| Terminal to normal    | `<C-W><Shift-N>` |
+| Normal to terminal    | `i` | 
