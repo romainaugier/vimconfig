@@ -52,7 +52,7 @@ Servers :
 - (Json) run `:CocInstall coc-json`
 - (Rust) run `:CocInstall coc-rust-analyzer`
 
-### Shortcuts
+### Shortcuts (and memo)
 
 | Action | Shortcut |
 | ------ | ---------|
@@ -78,3 +78,4 @@ Servers :
 | Go to top vsplit      | `<C-K>` |
 | Terminal to normal    | `<C-W><Shift-N>` |
 | Normal to terminal    | `i` | 
+| Reuse previous selection | `gv` |
