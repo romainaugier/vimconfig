@@ -68,7 +68,10 @@ Servers :
 | Go to symbol          | `gd`  |
 | Go to symbol in vsplit | `gsd` |
 | Cursor on symbol to generate documentation | `,d` |
-| Open File Search      | `<C-F>` |
+| Open FZF File Search      | `<C-F>` |
+| Open FZF File in new vsplit | `<C-V>` |
+| Open FZF File in new hsplit | `<C-X>` |
+| Open FZF File in new tab | `<C-T>` |
 | Comment line          | `gc` | 
 | Comment visual block  | `gcc` | 
 | Quit insert mode      | `jj` |
