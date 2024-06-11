@@ -79,3 +79,10 @@ Servers :
 | Terminal to normal    | `<C-W><Shift-N>` |
 | Normal to terminal    | `i` | 
 | Reuse previous selection | `gv` |
+| Even all splits in the window | `<C-W>=` |
+
+### Commands (and memo too)
+
+| Action | Command |
+| ------ | ------- |
+| Resize current split | `:resize <+-><size>` |
