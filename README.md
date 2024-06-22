@@ -90,3 +90,4 @@ Servers :
 | ------ | ------- |
 | Resize current horizontal split | `:resize <+-><size>` |
 | Resize current vertical split | `:vertical resize <+-><size>`|
+| Remove current highlighting | `:noh` |
