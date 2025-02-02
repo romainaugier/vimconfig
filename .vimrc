@@ -185,3 +185,7 @@ let g:doge_doc_standard_python = 'google'
 " fzf settings
 let g:fzf_preview_window = []
 nnoremap <C-F> :Files<CR>
+
+" italics in tmux
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
