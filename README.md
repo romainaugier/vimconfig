@@ -91,3 +91,11 @@ Servers :
 | Resize current horizontal split | `:resize <+-><size>` |
 | Resize current vertical split | `:vertical resize <+-><size>`|
 | Remove current highlighting | `:noh` |
+
+### Tmux *(Linux-only)*
+
+To enable italics rendering with Tmux, set this environment variable before launching tmux:
+```bash
+env TERM=screen-256color
+tmux
+```
