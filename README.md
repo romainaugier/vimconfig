@@ -51,6 +51,7 @@ Servers :
 - (Markdown) run `:CocInstall coc-markdownlint`
 - (Json) run `:CocInstall coc-json`
 - (Rust) run `:CocInstall coc-rust-analyzer`
+- (Go) run `:CocInstall coc-go`
 
 ### Shortcuts (and memo)
 
