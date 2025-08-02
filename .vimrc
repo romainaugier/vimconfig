@@ -9,9 +9,6 @@ set encoding=utf-8
 
 set signcolumn=yes
 
-" limit at 80 chars
-set colorcolumn=80
-
 " relative line number
 set relativenumber
 
