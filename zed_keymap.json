@@ -2,7 +2,8 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-f": "file_finder::Toggle"
+      "ctrl-f": "file_finder::Toggle",
+      "alt-shift-down": "editor::AddSelectionBelow"
     }
   },
   {
