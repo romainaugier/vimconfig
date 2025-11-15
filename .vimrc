@@ -9,6 +9,9 @@ set encoding=utf-8
 
 set signcolumn=yes
 
+" limit at 80 chars
+set colorcolumn=80
+
 " relative line number
 set relativenumber
 
@@ -119,18 +122,34 @@ Plug 'tpope/vim-abolish'
 Plug 'kkoomen/vim-doge', { 'tag' : 'v3.10.0', 'do': { -> doge#install() } }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
+Plug 'shinchu/lightline-gruvbox.vim'
 
 call plug#end()
 
 " color scheme
-let g:codedark_italics=1
+let g:gruvbox_italics=1
 
 set t_Co=256
 set t_ut=
-colorscheme codedark
+
+" Function that switches between light and dark
+function! GruvboxAutoSwitch()
+  let l:hour = str2nr(strftime("%H"))
+
+  if l:hour < 21
+    set background=light
+  else
+    set background=dark
+  endif
+
+  colorscheme gruvbox
+endfunction
+
+" Run the switch at startup
+autocmd VimEnter * call GruvboxAutoSwitch()
 
 let g:lightline = {
-            \ 'colorscheme': 'codedark',
             \ 'active': {
             \    'left': [ [ 'mode', 'paste' ],
             \              [ 'filename', 'modified' ],
