@@ -12,4 +12,13 @@
     "light": "Gruvbox Light Soft",
     "dark": "One Dark"
   }
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "file_types": {
+    "asm-intel-x86-generic": ["*.asm"]
+  },
+  "wrap_guides": [80]
 }
