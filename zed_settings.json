@@ -2,7 +2,7 @@
   "project_panel": {
     "dock": "right"
   },
-  "relative_line_numbers": "enabled",
+  "relative_line_numbers": true,
   "format_on_save": "off",
   "vim_mode": true,
   "ui_font_size": 16,
@@ -11,7 +11,7 @@
     "mode": "system",
     "light": "Gruvbox Light Soft",
     "dark": "One Dark"
-  }
+  },
   "autosave": {
     "after_delay": {
       "milliseconds": 1000
