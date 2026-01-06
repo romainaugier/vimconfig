@@ -38,8 +38,8 @@ bitsadmin /transfer "Vimrc Download" "https://raw.githubusercontent.com/romainau
 ```
 
 ## Coc
-NodeJS :
-- Download and install [NodeJS](https://nodejs.org/en) and put it in the PATH
+Bun :
+- Download and install [Bun](https://bun.com) and put it in the PATH
 
 Servers :
 - (C/C++) [Clang](https://releases.llvm.org/download.html) must be in the PATH and run `:CocInstall coc-clangd`
@@ -84,6 +84,9 @@ Servers :
 | Normal to terminal    | `i` | 
 | Reuse previous selection | `gv` |
 | Even all splits in the window | `<C-W>=` |
+| Add cursor to next match | `<C-N>` |
+| Add cursor to line below | `<C-Down>` |
+| Add cursor to line above | `<C-Up>` |
 
 ### Commands (and memo too)
 
